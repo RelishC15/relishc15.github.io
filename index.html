@@ -13,13 +13,41 @@
     <div class="logo">
         <img src="logo0.svg" alt="Relish Logo"> <!-- 这是你的logo -->
     </div>
-    <nav class="glass-navbar">
+    <nav class="glass-navbar" id=navbar">
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="#">Our Product</a></li>
             <li><a href="#">About Us</a></li>
+            <div id="marker"></div>
         </ul>
     </nav>
 </div>
+<script>
+    let marker = document.querySelector('#marker');
+    let list = document.querySelectorAll('ul li');
+    function moveIndicator(e) {
+        marker.style.left = e.offsetLeft + 'px';
+        marker.style.width = e.offsetWidth + 'px';
+    }
+    list.forEach(link => {
+        link.addEventListener('mousemove', (e) => {
+            moveIndicator(e.target);
+        })
+    })
+
+    // 添加以下代码初始化 marker 的位置
+    window.onload = function() {
+        let firstLink = list[0];  // 获取第一个链接
+        moveIndicator(firstLink);  // 将marker移动到第一个链接的下方
+    }
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+
+    }
+    list.forEach((item)=>
+    item.addEventListener('mouseover',activeLink));
+</script>
 </body>
 </html>
