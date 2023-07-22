@@ -58,3 +58,11 @@ body {
 .glass-navbar a:hover {
     color: #FFD700; /* 添加鼠标悬停时的颜色变化 */
 }
+.logo {
+    width: 300px; /* 调整 logo 宽度 */
+    margin-bottom: 20px; /* 在 logo 和导航栏之间添加一些间距 */
+}
+
+.logo img {
+    width: 100%; /* 使图片填充整个 .logo 容器 */
+}
