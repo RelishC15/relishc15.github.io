@@ -27,8 +27,8 @@
     let list = document.querySelectorAll('ul li');
     function moveIndicator(e) {
         let rect = e.getBoundingClientRect();
-        marker.style.left = e.offsetLeft + 'px';
-        marker.style.width = e.offsetWidth + 'px';
+        marker.style.left = e.getBoundingClientRect().left + 'px';
+        marker.style.width = e.getBoundingClientRect().width + 'px';
     }
     list.forEach(link => {
         link.addEventListener('mousemove', (e) => {
