@@ -26,6 +26,7 @@
     let marker = document.querySelector('#marker');
     let list = document.querySelectorAll('ul li');
     function moveIndicator(e) {
+        let rect = e.getBoundingClientRect();
         marker.style.left = e.offsetLeft + 'px';
         marker.style.width = e.offsetWidth + 'px';
     }
