@@ -85,14 +85,14 @@ body {
     position: absolute;
     top: 0;
     transition: 0.5s;
-    z-index: 1;
+    z-index: 1000;
 }
 
 #marker::before{
 
     content: '';
     position: absolute;
-    top: -10px;
+    top: -5px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px;
