@@ -22,6 +22,7 @@
     <list default="true" id="90a1d13e-7fd5-4aea-a5e1-5ae57de835af" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -67,7 +68,7 @@
       <updated>1690030346807</updated>
       <workItem from="1690030348195" duration="12230000" />
       <workItem from="1690043805541" duration="316000" />
-      <workItem from="1690097024141" duration="2789000" />
+      <workItem from="1690097024141" duration="11525000" />
     </task>
     <servers />
   </component>

@@ -1,32 +1,81 @@
 body {
     margin: 0;
     padding: 0;
-    background: white no-repeat center center fixed; /* 添加一个背景图片 */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    background: radial-gradient(circle, #ffd500, #ffb900, #00a325, #0090ff);
+    background-size: 200% 200%;
+    background-image: radial-gradient(circle, #ffd500, #ffb900, #00ffcc, #0090ff), radial-gradient(circle, #ff00ff, #0000ff, #00a325, #ff0000);
+    background-size: 200% 200%;
+    animation: gradient 15s ease-in-out infinite;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    font-family: Arial, sans-serif; /* 更改全局字体 */
+
+    font-family: 'Baloo Tamma 2', cursive;
 }
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
+    width: 100vw;
+    height: 100vh;
 }
 
-.header-title {
-    padding: 20px 0;
-    background: rgba(255, 255, 255, 0.7);
-    color: #000000;
-    font-size: 3em; /* 更大的字体大小 */
-    border-radius: 10px;
+.news-bar {
+    flex: 1;
+
 }
+.comment {
+    flex: 1;
+}
+
+.content {
+    width: 33%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+.header-title {
+
+    padding: 20px 0;
+    background: -webkit-linear-gradient(left top, #00e1ff, #005eff, #00a325, #00ff1c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    font-size: 7mm;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+    opacity: 0.9;
+}
+.header-title:hover {
+    opacity: 1;
+}
+
 
 
 .header-title h1 {
@@ -36,7 +85,7 @@ body {
 .glass-navbar {
     width: 100%;
     padding: 20px 0;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(5px);
     border-radius: 20px; /* 添加这行来给导航栏添加圆角 */
     box-shadow: 0 5px 25px rgba(0,0,0,0.25);
@@ -50,36 +99,38 @@ body {
 .glass-navbar li {
     display: inline;
     margin: 0 30px;
-    padding: 10px; /* 增加点垫片，使得导航更有趣 */
+    padding: 10px;
 
 }
 
 .glass-navbar a {
     color: rgba(0, 0, 0, 1);
     text-decoration: none;
-    font-size: 1.2em; /* 更大的字体大小 */
+    font-size: 1.2em;
     opacity: 0.25;
     transition: 0.25s;
 
 }
 
 .glass-navbar ul li.active a {
-    color: rgb(0, 0, 0); /* 添加鼠标悬停时的颜色变化 */
+    color: rgb(0, 0, 0);
     opacity: 1;
 }
 .logo {
-    width: 350px; /* 调整 logo 宽度 */
-    margin-bottom: 20px; /* 在 logo 和导航栏之间添加一些间距 */
-    position: relative; /* 设置为相对定位 */
-    left: -2.5%;
+
+    width: 350px;
+    margin-bottom: -20%;
+    margin-top: -20%;
+    position: relative;
+    left: -23%;
 }
 
 .logo img {
-    width: 100%; /* 使图片填充整个 .logo 容器 */
+    width: 100%;
 }
 
 .hidden {
-    display: none; /* 隐藏元素 */
+    display: none;
 }
 #marker{
     position: absolute;
@@ -95,8 +146,8 @@ body {
     top: -5px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50px;
-    height: 40px;
+    width: 140px;
+    height: 10px;
     border-radius: 8px;
 
 
@@ -113,11 +164,11 @@ ul li:nth-child(1).active ~ #marker::before{
     0 0 60px #4ed5c3
 }
 ul li:nth-child(2).active ~ #marker::before{
-    background: #ffd700;
-    box-shadow: 0 0 15px #ffd700,
-    0 0 30px #ffd700,
-    0 0 45px #ffd700,
-    0 0 60px #ffd700
+    background: #ff7900;
+    box-shadow: 0 0 15px #ff7900,
+    0 0 30px #ff7900,
+    0 0 45px #ff7900,
+    0 0 60px #ff7900
 }
 ul li:nth-child(3).active ~ #marker::before{
     background: #49d720;

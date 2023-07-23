@@ -4,24 +4,97 @@
     <meta charset="UTF-8">
     <title>Relish-C15</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <div class="container">
-    <header class="header-title">
-        <h1>Relish</h1>
-    </header>
-    <div class="logo">
-        <img src="logo0.svg" alt="Relish Logo"> <!-- 这是你的logo -->
+    <div class="news-bar"></div>
+    <div class="content">
+        <header class="header-title">
+            <h1>Relish-C15</h1>
+        </header>
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="424pt" height="600pt" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+                 viewBox="0 0 21000 29700" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <defs>
+        <style type="text/css">
+            .fil0 {
+                fill: #4CCAFA;
+
+                animation: neon 1s linear infinite;
+            }
+
+            .fil1 {
+                fill: #E7E401;
+
+                animation: neon 1s linear infinite;
+            }
+
+            .fil2 {
+                fill: #003348;
+
+                animation: neon 1s linear infinite;
+            }
+
+            .fil3 {
+                fill: #006018;
+
+                animation: neon 1s linear infinite;
+            }
+            /*.fil0:hover {
+
+            }
+
+            .fil1:hover {
+
+            }
+
+            .fil2:hover {
+
+            }
+
+            .fil3:hover {
+
+            }
+            @keyframes neon {
+                0%, 100% {
+                    filter: url(#glow);
+                }
+                50% {
+                    filter: none;
+                }
+            }*/
+        </style>
+
+
+    </defs>
+
+                <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+                    <path class="fil0" d="M8760 11993l-589 -1994c0,0 -56,-187 3,-290 60,-102 1552,-1756 1552,-1756 0,0 76,-73 133,-21 58,51 326,3538 326,3538l288 -59 -212 -5282 1598 1875c0,0 63,45 73,127 10,82 -131,3199 -131,3199 0,0 185,-10 317,6 133,17 199,35 199,35l15 -1864 708 731 -113 1267c1476,344 3223,1605 3526,3165 169,874 -2241,878 -2729,814 -853,-113 -1052,-672 -853,-1154 198,-483 648,-450 837,-374 188,76 221,175 221,175 -197,-895 -1180,-1465 -1852,-754 -284,301 -341,863 -241,1194 99,331 284,569 284,569 0,0 -1095,-122 -2279,420 -1184,542 -2044,1174 -2553,1577 -280,222 -891,821 -1227,905 0,0 399,-468 504,-914 226,-953 46,-2064 411,-2949 503,-1223 1786,-2153 1784,-2186zm6217 2342c65,39 65,159 -1,267 -66,109 -172,165 -237,126 -64,-39 -64,-159 2,-268 66,-108 172,-165 236,-125zm652 -440c118,0 213,52 213,117 0,65 -95,118 -213,118 -118,0 -213,-53 -213,-118 0,-65 95,-117 213,-117zm-4820 -6092l714 615 -53 509 -668 -463 7 -661zm-1836 2755c0,0 -198,-745 -188,-784 10,-40 436,-463 436,-463l212 1309 -460 -62zm89 231l397 99 133 781 -364 -113 -166 -767z"/>
+                    <path class="fil1" d="M8494 16688c0,0 595,-629 1772,-986 1178,-357 1958,-324 1958,-324 0,0 232,403 1489,536 1256,132 2573,-318 3247,-655 675,-337 821,-470 847,-390 26,79 -93,992 -1065,1673 -972,681 -2302,658 -2719,615 -416,-43 -1002,-211 -1762,-506 -761,-294 -1796,-311 -2236,-281 -440,30 -1394,295 -1531,318z"/>
+                    <path class="fil2" d="M5834 18287c0,0 550,-123 1181,-486 1354,-779 2491,-1377 4148,-1058 384,74 729,198 1170,320 959,265 1317,400 2441,374 1125,-27 1839,-486 2018,-602 178,-116 241,-238 241,-238 -553,1609 -2205,2487 -3840,2338 -1091,-99 -2288,-797 -3085,-926 -798,-129 -1796,7 -2269,102 -473,96 -1098,344 -2005,176z"/>
+                    <path class="fil3" d="M7501 18538c0,0 1069,-486 2246,-281 1177,205 1812,714 2738,926 927,212 1661,46 1661,46 0,0 -225,787 -1872,1072 -1647,284 -3314,-483 -4773,-1763z"/>
+ </g>
+</svg>
+
+        </div>
+
+        <nav class="glass-navbar" id="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Product</a></li>
+                <li><a href="#">About Us</a></li>
+                <div id="marker"></div>
+            </ul>
+        </nav>
     </div>
-    <nav class="glass-navbar" id=navbar">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Our Product</a></li>
-            <li><a href="#">About Us</a></li>
-            <div id="marker"></div>
-        </ul>
-    </nav>
+    <div class="comment"></div>
 </div>
+
+
 <script>
     let marker = document.querySelector('#marker');
     let list = document.querySelectorAll('ul li');
@@ -36,19 +109,20 @@
         })
     })
 
-    // 添加以下代码初始化 marker 的位置
+
     window.onload = function() {
-        let firstLink = list[0];  // 获取第一个链接
-        moveIndicator(firstLink);  // 将marker移动到第一个链接的下方
+        let firstLink = list[0];
+        moveIndicator(firstLink);
     }
     function activeLink(){
         list.forEach((item) =>
-        item.classList.remove('active'));
+            item.classList.remove('active'));
         this.classList.add('active');
 
     }
     list.forEach((item)=>
-    item.addEventListener('mouseover',activeLink));
+        item.addEventListener('mouseover',activeLink));
 </script>
 </body>
 </html>
+
