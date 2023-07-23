@@ -40,14 +40,14 @@
     window.onload = function() {
         let firstLink = list[0];  // 获取第一个链接
         moveIndicator(firstLink);  // 将marker移动到第一个链接的下方
-        /*var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+        var isIOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
         if (isIOS) {
             // 如果是 iOS 设备，隐藏 marker
-            marker.style.display = "none";*/
-        var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            marker.style.display = "none";
+        /*var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
         if (isSafari) {
             // 如果是Safari浏览器，隐藏 marker
-            marker.style.display = "none";
+            marker.style.display = "none";*/
     }
     function activeLink(){
         list.forEach((item) =>
