@@ -102,6 +102,9 @@ body {
 
 
 }
+
+
+
 ul li:nth-child(1).active ~ #marker::before{
     background: #4ed5c3;
     box-shadow: 0 0 15px #4ed5c3,
