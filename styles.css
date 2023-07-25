@@ -25,19 +25,16 @@ body {
 
 .bar {
 
-
+    margin-bottom: -7%;
     margin-right: 0.5%;
 
     margin-left: 0.5%;
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
-    border-radius: 20px;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+
 
 }
 .comment {
@@ -137,7 +134,7 @@ body {
     margin-bottom: -20%;
     margin-top: -20%;
     position: relative;
-    left: -23%;
+    left: -18%;
 }
 
 .logo img {
@@ -191,4 +188,118 @@ ul li:nth-child(3).active ~ #marker::before{
     0 0 30px #49d720,
     0 0 45px #49d720,
     0 0 60px #49d720
+}
+
+
+
+
+
+
+
+
+.card
+{
+    margin-bottom: 20%;
+    position: relative;
+    width: 350px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0, 0, 0, .15);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    backdrop-filter: blur(5px);
+
+}
+
+.card:hover{
+    height: 450px;
+}
+
+.card .imgBox
+{
+    position: absolute;
+    top: 20px;
+    width: 300px;
+    height: 220px;
+    border-radius: 12px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.card:hover .imgBox
+{
+    top: -100px;
+    scale: 0.9;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, .2);
+}
+
+.card .imgBox img
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .ct
+{
+    position: absolute;
+    top: 77%;
+    width: 100%;
+    padding: 0 30px;
+    height: 60px;
+    overflow: hidden;
+
+    text-align: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.card:hover .ct
+{
+
+    overflow-y: auto;
+    top:130px;
+    height: 300px;
+}
+.card:hover .ct::-webkit-scrollbar {
+    display: none;  /* 对于 Chrome 和 Safari */
+}
+.card .ct h2
+{
+    top: 0;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--clr);
+}
+.card .ct p
+{
+    top: -30%;
+    font-weight: 700;
+    padding: 0 50px;
+    color: #333;
+    size: 2mm;
+    text-align: center;
+
+}
+.button
+{
+    color: white;
+    position: relative;
+    font-size: 20px;
+    display: inline-block;
+    padding: 12px 25px;
+
+    text-decoration: none;
+    font-weight: 1000;
+    border-radius: 8px;
+    margin: 20% 0;
+
+    background: #4ed5c3;
 }
