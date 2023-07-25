@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="bar">
-
-        <div class="card" style="--clr: #009688;">
+        <div class="our-product">
+        <div class="card our-product" style="--clr: #009688;">
         <div class="imgBox">
             <img src="">
         </div>
@@ -23,7 +23,7 @@
 
 
         </div>
-        <div class="card" style="--clr: #009688;">
+        <div class="card our-product" style="--clr: #009688;">
             <div class="imgBox">
                 <img src="">
             </div>
@@ -35,7 +35,115 @@
 
 
         </div>
-        
+        </div>
+        <div class="box about-us">
+            <div class="list about-us">
+                <div class="team-member">
+                <div class="imgBx">
+                    <img src="">
+                </div>
+                <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Kevin Zhu</h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Harry Jiang</h4>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Jason He</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Jevy Ju</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Lucy Lu</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Charles Ying</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Tiger Tan</h4>
+                    <p></p>
+                </div>
+            </div>
+            <div class="list about-us">
+                <div class="team-member">
+                    <div class="imgBx">
+                        <img src="">
+                    </div>
+                    <a>+</a>
+                </div>
+                <div class="content">
+                    <h2 class="rank">0</h2>
+                    <h4>Maria Zhang</h4>
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="content">
         <header class="header-title">
@@ -111,9 +219,9 @@
 
         <nav class="glass-navbar" id="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Product</a></li>
-                <li><a href="#">About Us</a></li>
+                <li id="h"><a href="#">Home</a></li>
+                <li id="op"><a href="#">Our Product</a></li>
+                <li id="au"><a href="#">About Us</a></li>
                 <div id="marker"></div>
             </ul>
         </nav>
@@ -139,16 +247,66 @@
 
     window.onload = function() {
         let firstLink = list[0];
+        showPart("h")
         moveIndicator(firstLink);
     }
     function activeLink(){
         list.forEach((item) =>
             item.classList.remove('active'));
         this.classList.add('active');
+        let activeOption = document.getElementsByClassName("active")[0];
 
+        if (activeOption.id==="h"){
+            showPart("h")
+        }else if (activeOption.id==="op"){
+            showPart("our-product")
+        }else if (activeOption.id==="au"){
+            showPart("about-us")
+        }
     }
     list.forEach((item)=>
         item.addEventListener('mouseover',activeLink));
+    function showPart(_class) {
+        let parentElement = document.getElementsByClassName('bar')[0];
+        let childElements = parentElement.children;
+
+        Array.from(childElements).forEach((item) => {
+            if (item.classList.contains(_class)) {
+
+                item.style.display = 'flex';
+                item.classList.add('fadeIn');
+
+                if(_class==="our-product")
+                    item.style.flexDirection='column'
+                if(_class==="about-us")
+                    item.style.flexDirection='column'
+            } else {
+                item.style.display = 'none'
+                item.classList.remove('fadeIn');
+            }
+        })
+    }
+    document.querySelectorAll('.box .list a').forEach(item => {
+        item.addEventListener('click', increaseRank);
+    });
+    function increaseRank(event) {
+        // Find the rank element in the clicked item
+        let rankElement = event.currentTarget;
+        let grandParent = rankElement.parentNode.parentNode;
+
+
+        let targetElement = grandParent.querySelector('.content .rank');
+
+        // Get the current rank value
+        let currentRank = parseInt(targetElement.textContent.replace('#',''), 10);
+
+        targetElement.textContent=(currentRank+1).toString()
+
+        // Update the rank element with the new value
+        rankElement.textContent = currentRank;
+    }
+
+
 </script>
 </body>
 </html>
