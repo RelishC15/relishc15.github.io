@@ -146,6 +146,7 @@
         </div>
     </div>
     <div class="content">
+
         <header class="header-title">
             <h1>Relish-C15</h1>
         </header>
@@ -219,16 +220,63 @@
 
         <nav class="glass-navbar" id="navbar">
             <ul>
-                <li id="h"><a href="#">Home</a></li>
+
                 <li id="op"><a href="#">Our Product</a></li>
                 <li id="au"><a href="#">About Us</a></li>
+                <li id="cb"><a href="#">Comment Board</a></li>
                 <div id="marker"></div>
             </ul>
         </nav>
+        <div class="empty"></div>
     </div>
-    <div class="comment"></div>
-</div>
+    <div class="info">
 
+        <div class="video-box">
+            <div class="nav">
+                <!--按钮-->
+
+                <!--头像-->
+                <div class="icon">
+                    <div class="header-title">C15</div>
+
+                </div>
+
+
+                <div class="menu">
+                    <div class="item">
+                        <div class="light"></div>
+
+                        <div class="con"><div class="header-title">MODERN</div></div>
+
+                    </div>
+                    <div class="item">
+                        <div class="light"></div>
+
+                        <div class="con"><div class="header-title">CHINESE</div></div>
+
+                    </div>
+                    <div class="item">
+                        <div class="light"></div>
+
+                        <div class="con"><div class="header-title">WATER</div></div>
+
+                    </div>
+                    <div class="item">
+                        <div class="light"></div>
+
+                        <div class="con"><div class="header-title">SDG 11</div></div>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        <iframe src="//player.bilibili.com/player.html?aid=913830122&bvid=BV1FM4y1x7gB&cid=1208971117&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+        </div>
+</div>
 
 <script>
     let marker = document.querySelector('#marker');
@@ -256,13 +304,14 @@
         this.classList.add('active');
         let activeOption = document.getElementsByClassName("active")[0];
 
-        if (activeOption.id==="h"){
-            showPart("h")
-        }else if (activeOption.id==="op"){
+        if (activeOption.id==="op"){
             showPart("our-product")
         }else if (activeOption.id==="au"){
             showPart("about-us")
+        }else if (activeOption.id==="cb"){
+            showPart("comment-board")
         }
+
     }
     list.forEach((item)=>
         item.addEventListener('mouseover',activeLink));
@@ -289,6 +338,19 @@
     document.querySelectorAll('.box .list a').forEach(item => {
         item.addEventListener('click', increaseRank);
     });
+    document.querySelectorAll('.logo').forEach(item => {
+        item.addEventListener('click', ()=>{
+            showPart("")
+            let intro=document.getElementsByClassName("info")[0]
+            if(intro.style.opacity==0){
+                intro.style.opacity=1
+            }else{
+                intro.style.opacity = 0
+            }
+
+        });
+    });
+
     function increaseRank(event) {
         // Find the rank element in the clicked item
         let rankElement = event.currentTarget;
@@ -305,6 +367,7 @@
         // Update the rank element with the new value
         
     }
+
 
 
 </script>
