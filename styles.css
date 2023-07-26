@@ -114,6 +114,7 @@ iframe{
     border-radius: 10px;
     transition: opacity 0.5s;
     opacity: 0.9;
+    z-index: 200;
 }
 
 .header-title:hover {
