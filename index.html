@@ -144,6 +144,11 @@
                 </div>
             </div>
         </div>
+        <div class="comment-board">
+            <textarea id="input"></textarea>
+            <button class="btn">✈️</button>
+            <ul id="board"></ul>
+        </div>
     </div>
     <div class="content">
 
@@ -341,7 +346,7 @@
     document.querySelectorAll('.logo').forEach(item => {
         item.addEventListener('click', ()=>{
             showPart("")
-            
+
 
         });
     });
@@ -374,6 +379,34 @@
         // Update the rank element with the new value
         
     }
+
+    var txt = document.getElementById("input");
+    var btn = document.getElementsByClassName("btn")[0];
+    var ul = document.getElementById("board");
+    //2、给button绑定点击事件
+    btn.onclick = function () {
+        if (txt.value == "") {
+            alert("您没有输入内容")
+        } else {
+
+            var li = document.createElement("li");
+
+            li.innerHTML = txt.value + "<a href='javascript:;'>❌</a>"
+            txt.value = "";
+
+            ul.insertBefore(li, ul.children[0]);
+
+            var as = document.querySelectorAll("a");
+
+            for (var i = 0; i < as.length; i++) {
+                as[i].onclick = function () {
+
+                    ul.removeChild(this.parentNode);
+                }
+            }
+        }
+    }
+
 
 
 
